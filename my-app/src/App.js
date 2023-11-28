@@ -6,7 +6,8 @@ import ConditionalRenderingFunctional from './components/ConditionalRenderingFun
 function App() {
   return (
     <div className="App">
-      <ConditionalRenderingFunctional connected={true} />
+      <ConditionalRenderingClass />
+      <ConditionalRenderingFunctional connected={true} />      
     </div>
   );
 }
