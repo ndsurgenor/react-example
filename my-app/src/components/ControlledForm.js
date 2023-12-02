@@ -10,6 +10,12 @@ export class ControlledForm extends Component {
         }
     }
 
+    handleNameChange = (event) => {
+        this.setState({
+            name: event.target.value
+        })
+    }
+
     render() {
         return (
             <div>
@@ -20,6 +26,7 @@ export class ControlledForm extends Component {
                         name="name"
                         type="text"
                         value={this.state.name}
+                        onChange={this.handleNameChange}
                     />
                     <input type="submit" value="Submit" />
                 </form>
