@@ -12,7 +12,7 @@ export class HTTPPost extends Component {
     }
 
     postToApi = () => {
-        axois.post('https://jsonplaceholder.typicode.com/posts', {
+        axios.post('https://jsonplaceholder.typicode.com/posts', {
             title: 'Hello World!',
             body: 'Working as expected',
             userId: 27,
