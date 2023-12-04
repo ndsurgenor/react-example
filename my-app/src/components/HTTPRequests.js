@@ -8,6 +8,7 @@ export class HTTPRequests extends Component {
 
         this.state = {
             posts: [],
+            error: null,
         }
     }
 
@@ -16,7 +17,13 @@ export class HTTPRequests extends Component {
             .then(response => {
                 console.log(response);
                 this.setState({
-                    posts: response.data,
+                    posts: Array.isArray(response.data)
+                        ? response.data : [response.data],
+                })
+            })
+            .catch(error => {
+                this.setState({
+                    error: error.message,
                 })
             })
     }
@@ -33,7 +40,8 @@ export class HTTPRequests extends Component {
                         <p>{post.body}</p>
                         <hr />
                     </div>
-                ))) : ('Loading Posts...')}
+                ))) : (this.state.error
+                    ? <p>Error: {this.state.error}</p> : <h4>Loading Posts...</h4>)}
             </div>
         )
     }
