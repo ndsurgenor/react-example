@@ -58,8 +58,8 @@ export class ControlledForm extends Component {
                             value={this.state.category}
                             onChange={this.handleCategoryChange}>
                             <option value="website">Website</option>
-                            <option value="website">Order</option>
-                            <option value="website">General</option>
+                            <option value="order">Order</option>
+                            <option value="general">General</option>
                         </select>
                     </div>
                     <div>
